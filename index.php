@@ -9,7 +9,30 @@
 
 <body>
     <?php
-    echo 'hello'.' world!';
+        // $books=[
+        //     [
+        //         'name'=>'hail mary',
+        //         'auther'=>'andy weir'
+        //     ],
+        //     [
+        //         'name'=>'to kill a mocking bird',
+        //         'auther'=>'harper lee'
+        //     ]
+        //     ];
+        // filter($books,'hail mary');
+        
+        // function filter($books,$name){
+        //     $filteredBook=[];
+        //    foreach($books as $book){
+        //         if($book['name']===$name){
+        //             $filteredBook[]=$book;
+        //         }
+        //    }
+        // }
+        $array=[1,2,3,4];
+        $array[]=5;
+        
+        print_r($array);
     ?>
 </body>
 
