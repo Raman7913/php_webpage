@@ -9,30 +9,38 @@
 
 <body>
     <?php
-        // $books=[
-        //     [
-        //         'name'=>'hail mary',
-        //         'auther'=>'andy weir'
-        //     ],
-        //     [
-        //         'name'=>'to kill a mocking bird',
-        //         'auther'=>'harper lee'
-        //     ]
-        //     ];
-        // filter($books,'hail mary');
-        
-        // function filter($books,$name){
-        //     $filteredBook=[];
-        //    foreach($books as $book){
-        //         if($book['name']===$name){
-        //             $filteredBook[]=$book;
-        //         }
-        //    }
-        // }
-        $array=[1,2,3,4];
-        $array[]=5;
-        
-        print_r($array);
+        $books=[
+            [
+                'name'=>'hail mary',
+                'author'=>'andy weir',
+                'year'=>2021,
+            ],
+            [
+                'name'=>'to kill a mocking bird',
+                'author'=>'harper lee',
+                'year'=>1960,
+            ],
+            [
+                'name'=>'pride and prejudice',
+                'author'=>'jane austen',
+                'year'=>1813,
+            ],
+        ];
+
+        function filter($books,$fn){
+            $filteredBooks=[];
+            foreach($books as $book){
+                if($fn($book)){
+                    $filteredBooks[]=$book;
+                }
+            }
+            return $filteredBooks;
+        }
+
+         $answer=filter($books, function($book) {
+            return $book['year'] < 2020 && $book['year'] > 1950;
+        });
+        print_r($answer);
     ?>
 </body>
 
