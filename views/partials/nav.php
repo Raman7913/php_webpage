@@ -31,12 +31,12 @@
                 text-decoration: underline;
             }
         <?php endif ?>
-        <?php if($_SERVER['REQUEST_URI']==='/about.php'): ?>
+        <?php if($_SERVER['REQUEST_URI']==='/about'): ?>
             .about{
                 text-decoration: underline;
             }
         <?php endif ?>
-        <?php if($_SERVER['REQUEST_URI']==='/contact.php'): ?>
+        <?php if($_SERVER['REQUEST_URI']==='/contact'): ?>
             .contact{
                 text-decoration: underline;
             }
@@ -48,8 +48,8 @@
 <nav>
             <ul class="navList">
                 <li><a href="/" class="home">Home</a></li>
-                <li><a href="/about.php" class="about">About us</a></li>
-                <li><a href="/contact.php" class="contact">Contact</a></li>
+                <li><a href="/about" class="about">About us</a></li>
+                <li><a href="/contact" class="contact">Contact</a></li>
             </ul>
             <div class="buttons">
                 <button class="signup">sign up</button>
