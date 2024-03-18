@@ -41,6 +41,12 @@
                 text-decoration: underline;
             }
         <?php endif ?>
+        <?php if($_SERVER['REQUEST_URI']==='/notes'): ?>
+            .notes{
+                text-decoration: underline;
+            }
+        <?php endif ?>
+
 
     </style>
 </head>
@@ -50,6 +56,7 @@
                 <li><a href="/" class="home">Home</a></li>
                 <li><a href="/about" class="about">About us</a></li>
                 <li><a href="/contact" class="contact">Contact</a></li>
+                <li><a href="/notes" class="notes">Notes</a></li>
             </ul>
             <div class="buttons">
                 <button class="signup">sign up</button>
