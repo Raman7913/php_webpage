@@ -6,24 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            margin:0;
+        body {
+            margin: 0;
         }
-        main{
+
+        main {
             padding: 20px;
         }
     </style>
 </head>
 
 <body>
-   <section>
+    <section>
         <?php include 'partials/nav.php'; ?>
-        <?php include 'partials/header.php';?>
+        <?php include 'partials/header.php'; ?>
         <main>
-            welcome to the notes page
+
+            <?php foreach($notes as $note):?>
+            <li>
+                <a href="/note?id=<?=$note['id']?>">
+                    <?= $note['body'] ?>
+                </a>
+            </li>
+            <?php endforeach; ?>
+
+
+
+
         </main>
-   </section>
-    
+    </section>
+
 </body>
 
 </html>
