@@ -6,30 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            margin: 0;
+        body{
+            margin:0;
         }
-
-        main {
+        main{
             padding: 20px;
         }
     </style>
 </head>
 
 <body>
-    <section>
+   <section>
         <?php include 'partials/nav.php'; ?>
-        <?php include 'partials/header.php'; ?>
         <main>
-
-            <li><?=$notes['body']?></li>
-
-
-
-
+            <h1>403 error. Sorry not accessible by user</h1>
+            <a href="/">go back</a>
         </main>
-    </section>
-
+   </section>
+    
 </body>
 
 </html>

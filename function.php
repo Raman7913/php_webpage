@@ -7,3 +7,8 @@
 
         die();
     }
+    function authorize($condition,$status = Response::forbidden){
+        if(!$condition){
+            abort($status);
+        }
+    }
