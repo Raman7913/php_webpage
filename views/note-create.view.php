@@ -22,18 +22,12 @@
         <?php include 'partials/header.php'; ?>
         <main>
 
-            <ul>
-                <?php foreach($notes as $note):?>
-                <li>
-                    <a href="/note?id=<?=$note['id']?>">
-                        <?= $note['body'] ?>
-                    </a>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-            <a href="/notes/create">
-                    <p>Create notes</p>
-            </a>
+            
+            <form action="">
+                <label for="body">Description of note:</label>
+                <div><textarea name="description" id="body" cols="30" rows="10"></textarea></div>
+                <button type="submit">submit</button>
+            </form>
 
 
 

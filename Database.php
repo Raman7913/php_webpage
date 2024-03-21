@@ -40,6 +40,6 @@ class Database
     return $result;
     }
     function get(){
-        return $this->statement->fetchAll(PDO::FETCH_ASSOC);
+        return $this->statement->fetchAll(PDO::FETCH_ASSOC);    
     }
 }
