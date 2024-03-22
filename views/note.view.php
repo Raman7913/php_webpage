@@ -22,7 +22,7 @@
         <?php include 'partials/header.php'; ?>
         <main>
 
-            <li><?=$notes['body']?></li>
+            <li><?=htmlspecialchars($notes['body'])?></li>
 
 
 

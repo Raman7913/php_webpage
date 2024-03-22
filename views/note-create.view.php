@@ -23,12 +23,28 @@
         <main>
 
             
-            <form action="">
+            <form method="post">
                 <label for="body">Description of note:</label>
-                <div><textarea name="description" id="body" cols="30" rows="10"></textarea></div>
+                <div>
+                    <textarea 
+                        name="description" 
+                        id="body" 
+                        cols="30" 
+                        rows="10" 
+                        required
+                        ><?=isset($_POST['description'])?$_POST['description']:'' ?>
+                            
+                                
+                            
+                    </textarea>
+                </div>
                 <button type="submit">submit</button>
             </form>
-
+            <?php
+            if(isset($error['body'])){
+                echo $error['body'];
+            }
+            ?>
 
 
 
