@@ -1,3 +1,4 @@
 <?php
-    $name="Contact us";
-    include 'views/contact.view.php';
+    view('contact.view.php',[
+        'name'=>'Contact us',
+    ]);

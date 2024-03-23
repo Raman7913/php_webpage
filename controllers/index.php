@@ -1,4 +1,5 @@
 <?php
-    $name = "Home";
-    include 'views/index.view.php';
+    view('index.view.php',[
+        'name'=>'Home',
+    ]);
     

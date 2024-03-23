@@ -1,3 +1,4 @@
 <?php
-    $name="About us";
-    include 'views/about.view.php';
+    view('about.view.php',[
+        'name'=>'About us',
+    ]);

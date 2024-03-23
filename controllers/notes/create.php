@@ -1,15 +1,11 @@
 <?php
-    require 'Validation.php';
-
-
-    $name='create note here';
+    require basePath('core/Validation.php');
     
-    $config = include 'config.php';
+    $config = include basePath('config.php');
     $db = new Database($config['database']);
-    
+    $error=[];
     if($_SERVER['REQUEST_METHOD']==='POST'){
-        $error=[];
-
+        
         if(!Validation::string($_POST['description'],1,255))
         {
             $error['body']='!!! text should be between 1 and 255 characters';
@@ -22,4 +18,9 @@
         ]);
         }
     }
-    require('views/note-create.view.php');
+    view('notes/create.view.php',[
+        'name'=>'create notes here',
+        'error'=>$error,
+    ]);
+    
+    

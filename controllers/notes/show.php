@@ -1,7 +1,6 @@
 <?php
-    $name = 'Note';
 
-    $config = include 'config.php';
+    $config = include basePath('config.php');
     $db = new Database($config['database']);
     $id = $_GET['id'];
     
@@ -13,4 +12,9 @@
 
     authorize($notes['user_id'] === $currentUserId);
 
-    include 'views/note.view.php';
+    view('notes/show.view.php',[
+        'name'=>'Show notes',
+        'notes'=>$notes
+    ]);
+    
+    

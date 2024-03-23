@@ -18,8 +18,8 @@
 
 <body>
     <section>
-        <?php include 'partials/nav.php'; ?>
-        <?php include 'partials/header.php'; ?>
+        <?php include basePath('views/partials/nav.php'); ?>
+        <?php include basePath('views/partials/header.php'); ?>
         <main>
 
             <li><?=htmlspecialchars($notes['body'])?></li>

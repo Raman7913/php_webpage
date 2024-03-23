@@ -18,8 +18,8 @@
 
 <body>
     <section>
-        <?php include 'partials/nav.php'; ?>
-        <?php include 'partials/header.php'; ?>
+        <?php include basePath('views/partials/nav.php'); ?>
+        <?php include basePath('views/partials/header.php'); ?>
         <main>
 
             
@@ -31,11 +31,7 @@
                         id="body" 
                         cols="30" 
                         rows="10" 
-                        required
-                        ><?=isset($_POST['description'])?$_POST['description']:'' ?>
-                            
-                                
-                            
+                        required><?=isset($_POST['description'])?$_POST['description']:'' ?>
                     </textarea>
                 </div>
                 <button type="submit">submit</button>

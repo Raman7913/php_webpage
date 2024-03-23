@@ -12,3 +12,10 @@
             abort($status);
         }
     }
+    function basePath($path){
+        return BASE_PATH . $path;
+    }
+    function view($path,$attributes=[]){
+        extract($attributes);
+        require basePath("/views/".$path);
+    }
