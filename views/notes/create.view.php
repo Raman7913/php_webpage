@@ -23,7 +23,7 @@
         <main>
 
             
-            <form method="post">
+            <form method="post" action="/notes">
                 <label for="body">Description of note:</label>
                 <div>
                     <textarea 

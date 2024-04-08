@@ -1,18 +1,49 @@
 <?php
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-$routes=require basePath('routes.php');
-function abort($code = 404)
-{
-    http_response_code($code);
-    require basePath("views/{$code}.php");
-    die();
-}
-function routeToController($uri,$routes)
-{
-    if (array_key_exists($uri, $routes)) {
-        require basePath($routes[$uri]);
-    } else {
-        abort();
+
+namespace core;
+
+class Router{
+    protected $routes =[];
+    public function add($uri,$controller,$method){
+        $this->routes[]=[
+            'uri'=>$uri,
+            'controller'=>$controller,
+            'method'=> $method
+        ];
     }
-}
-routeToController($uri,$routes);
+    public function get($uri,$controller){
+        $this->add($uri,$controller,'GET');
+    }
+    public function post($uri,$controller){
+        $this->add($uri,$controller,'POST');
+    }
+    public function delete($uri,$controller){
+        $this->add($uri,$controller,'DELETE');
+    }
+    public function put($uri,$controller){
+        $this->add($uri,$controller,'PUT');
+    }
+    public function patch($uri,$controller){
+        $this->add($uri,$controller,'PATCH');
+    }
+    
+    
+    public function route($uri,$method){
+        foreach($this->routes as $route){
+            if($route['uri'] === $uri && $route['method'] === strtoupper($method)){
+                return require basePath($route['controller']);
+            }
+        }
+        $this->abort();
+    }
+
+   
+    protected function abort($code = 404)
+    {
+        http_response_code($code);
+        require basePath("views/{$code}.php");
+        die();
+    }
+    }
+
+
